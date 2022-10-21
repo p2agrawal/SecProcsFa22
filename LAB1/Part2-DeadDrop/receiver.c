@@ -24,14 +24,14 @@ int set_id[8] = {0, 1, 2, 3, 4, 5, 6, 7};
 
  int o = 6;                          // log_2(64), where 64 is the line size
  int s = 14;                         // log_2(16384), where 16384 is the number of cache sets
- int two_o = 64;             // 64
- int two_o_s = 512;   // 1048576
- int b = 262144;
+ int x = 64;             // 64
+ int y = 512;   // 1048576
+ int z = 262144;
 
  long int misses[8][8];
  long int hits[8][8];
 
- char *buffer = malloc((size_t) b);
+ char *buffer = malloc((size_t) z);
 
  uint64_t addr;
 
@@ -54,7 +54,7 @@ int set_id[8] = {0, 1, 2, 3, 4, 5, 6, 7};
      int address_count = 0;
      for (int set_index = 0; set_index < 512; set_index++) {
        for (int way_index = 0; way_index < 8; way_index++) {
-	  addr = (uint64_t) (buffer + set_index * two_o_s + way_index * two_o);
+	  addr = (uint64_t) (buffer + set_index * y + way_index * x);
            if (get_cache_set_index(addr) == set_id[set_id_index]) {
 		 eviction_set[set_id_index][address_count] = addr;
 		 address_count++;
