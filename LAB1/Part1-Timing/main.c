@@ -2,7 +2,7 @@
 
 // TODO: Uncomment the following lines and fill in the correct size
 //#define L1_SIZE [TODO]
-//#define L2_SIZE [TODO]
+#define L2_SIZE [TODO]
 //#define L3_SIZE [TODO]
  
 int main (int ac, char **av) {
