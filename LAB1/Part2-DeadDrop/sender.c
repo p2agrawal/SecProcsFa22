@@ -86,7 +86,7 @@ int main(int argc, char **argv)
    for (int way = 0; way < 8; way++){
     start_time = clock();
     current_time = start_time;
-     while (current_time - start_time < 250000) { 
+     while (current_time - start_time < 100000) { 
 	//clflush(eviction_set[ind][way]);
    	current_time = clock();
          }

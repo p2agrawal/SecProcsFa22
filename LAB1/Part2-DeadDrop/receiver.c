@@ -87,7 +87,7 @@ printf("Prime is done\n");
 	    for (int way = 0; way < 8; way++){
          start_time = clock();
          current_time = start_time;
-	    while (listening && current_time - start_time < 200) {
+	    while (listening && current_time - start_time < 1000) {
             int time = measure_one_block_access_time(eviction_set[ind][way]);
 	    
 	   if (time < 700) {
